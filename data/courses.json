@@ -1,0 +1,32 @@
+[
+ {"code":"CSE518","name":"Artificial Intelligence","credits":3,"sections":[
+  {"id":"CSE518-1","instructor":"Shashi Prabh","seats":40,"synthetic":false,
+   "slots":[{"day":"Tue","start":"16:00","end":"17:30"},{"day":"Thu","start":"16:00","end":"17:30"}]},
+  {"id":"CSE518-2","instructor":"Instructor A","seats":30,"synthetic":true,
+   "slots":[{"day":"Mon","start":"14:00","end":"15:30"},{"day":"Wed","start":"14:00","end":"15:30"}]}]},
+ {"code":"CSE340","name":"Operating Systems","credits":3,"sections":[
+  {"id":"CSE340-1","instructor":"Instructor B","seats":35,"synthetic":true,
+   "slots":[{"day":"Mon","start":"10:00","end":"11:30"},{"day":"Wed","start":"10:00","end":"11:30"}]},
+  {"id":"CSE340-2","instructor":"Instructor C","seats":30,"synthetic":true,
+   "slots":[{"day":"Tue","start":"10:00","end":"11:30"},{"day":"Thu","start":"10:00","end":"11:30"}]},
+  {"id":"CSE340-3","instructor":"Instructor B","seats":0,"synthetic":true,
+   "slots":[{"day":"Mon","start":"13:00","end":"14:30"},{"day":"Wed","start":"13:00","end":"14:30"}]}]},
+ {"code":"CSE330","name":"Computer Networks","credits":3,"sections":[
+  {"id":"CSE330-1","instructor":"Instructor D","seats":30,"synthetic":true,
+   "slots":[{"day":"Mon","start":"10:30","end":"12:00"},{"day":"Wed","start":"10:30","end":"12:00"}]}]},
+ {"code":"CSE250","name":"Database Management Systems","credits":3,"sections":[
+  {"id":"CSE250-1","instructor":"Instructor E","seats":30,"synthetic":true,
+   "slots":[{"day":"Tue","start":"09:00","end":"10:30"},{"day":"Thu","start":"09:00","end":"10:30"}]},
+  {"id":"CSE250-2","instructor":"Instructor F","seats":25,"synthetic":true,
+   "slots":[{"day":"Mon","start":"15:00","end":"16:30"},{"day":"Wed","start":"15:00","end":"16:30"}]}]},
+ {"code":"STA202","name":"Mathematical Statistics","credits":4,"sections":[
+  {"id":"STA202-1","instructor":"Instructor G","seats":40,"synthetic":true,
+   "slots":[{"day":"Mon","start":"12:00","end":"13:00"},{"day":"Wed","start":"12:00","end":"13:00"},{"day":"Fri","start":"12:00","end":"13:00"}]},
+  {"id":"STA202-2","instructor":"Instructor H","seats":35,"synthetic":true,
+   "slots":[{"day":"Tue","start":"13:00","end":"15:00"},{"day":"Thu","start":"13:00","end":"15:00"}]}]},
+ {"code":"CSE300","name":"Software Engineering","credits":3,"sections":[
+  {"id":"CSE300-1","instructor":"Instructor I","seats":30,"synthetic":true,
+   "slots":[{"day":"Tue","start":"11:00","end":"12:30"},{"day":"Thu","start":"11:00","end":"12:30"}]},
+  {"id":"CSE300-2","instructor":"Instructor J","seats":30,"synthetic":true,
+   "slots":[{"day":"Mon","start":"16:30","end":"18:00"},{"day":"Wed","start":"16:30","end":"18:00"}]}]}
+]
