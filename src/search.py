@@ -1,6 +1,7 @@
 from itertools import product
 
 from .csp import is_valid_schedule, is_consistent, sections_conflict
+from .propagation import ac3
 
 
 def brute_force(csp):
@@ -17,7 +18,7 @@ def brute_force(csp):
 
     return solutions, {"combinations_checked": checked}
 
-def solve(csp, use_fc=False, use_mrv=False, use_lcv=False):
+def solve(csp, use_fc=False, use_mrv=False, use_lcv=False, use_ac3=False):
     """Backtracking that collects ALL solutions, with optional heuristics."""
     stats = {"nodes": 0, "backtracks": 0}
     solutions = []
@@ -88,5 +89,11 @@ def solve(csp, use_fc=False, use_mrv=False, use_lcv=False):
             stats["backtracks"] += 1
         return found
 
-    backtrack({}, {v: list(d) for v, d in csp.domains.items()})
+    start = {v: list(d) for v, d in csp.domains.items()}
+    if use_ac3:
+        start, removed = ac3(csp)
+        stats["ac3_removed"] = len(removed)
+        if start is None:                 # a course lost all its sections
+            return [], stats
+    backtrack({}, start)
     return solutions, stats
