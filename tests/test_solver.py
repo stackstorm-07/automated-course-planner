@@ -31,3 +31,12 @@ def test_impossible_case_returns_empty():
     csp.domains["CSE340"] = [s for s in csp.domains["CSE340"] if s.id == "CSE340-1"]
     sols, _ = solve(csp)
     assert sols == []
+
+def test_forward_checking_matches_and_prunes():
+    csp = make_csp()
+    bf, _ = brute_force(csp)
+    plain, plain_stats = solve(csp)
+    fc, fc_stats = solve(csp, use_fc=True)
+    print(f"\nPLAIN: {plain_stats}  |  FORWARD CHECKING: {fc_stats}")
+    assert sorted(map(key, fc)) == sorted(map(key, bf))
+    assert fc_stats["nodes"] < plain_stats["nodes"]
