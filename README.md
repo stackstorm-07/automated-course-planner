@@ -1,5 +1,3 @@
-# automated-course-planner
-AI-based university timetable generation using constraint satisfaction problems and search algorithms.
 # Automated Course Planner
 
 **AI-based university timetable generation using constraint satisfaction (CSP) and search.**
