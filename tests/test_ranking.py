@@ -20,8 +20,8 @@ def test_best_schedule_first_and_values_checked_by_hand():
     top = rank_schedules(sols, prefs)
     print("\nRANKING:", [(s.assignment["STA202"].id, s.score) for s in top])
     assert [s.assignment["STA202"].id for s in top] == ["STA202-2", "STA202-1"]
-    assert top[0].score == 0.75
-    assert top[1].score == 0.35
+    assert top[0].score == 0.78
+    assert top[1].score == 0.39
     assert top[0].breakdown["days_off"] == 1.0     # Friday is free
     assert top[1].breakdown["days_off"] == 0.0     # STA202-1 meets on Friday
 

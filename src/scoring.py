@@ -1,7 +1,7 @@
 """Soft-constraint scoring. Every term is normalised to 0..1 (1 = best).
 Scoring never decides validity; it only ranks schedules that are already valid."""
 
-ALL_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+ALL_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 
 def to_minutes(hhmm):

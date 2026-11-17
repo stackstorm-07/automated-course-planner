@@ -9,17 +9,28 @@ COL = 9
 def fmt(minutes):
     return f"{minutes // 60:02d}:{minutes % 60:02d}"
 
+def _grid_shape(schedule):
+    """Columns and time range needed to show every class (Saturday and
+    early/late classes are added only when the schedule uses them)."""
+    slots = [sl for sec in schedule.assignment.values() for sl in sec.slots]
+    days = DAYS + ["Sat"] if any(sl.day == "Sat" for sl in slots) else DAYS
+    start, end = START, END
+    if slots:
+        start = min(start, min(sl.start for sl in slots) // STEP * STEP)
+        end = max(end, -(-max(sl.end for sl in slots) // STEP) * STEP)
+    return days, start, end
 
 def render_calendar(schedule, title="Timetable"):
     """Mon-Fri grid with half-hour rows 09:00-18:00. A cell shows the course
     code running in that half hour; two courses in one cell show CLASH
     (should never happen for solver output, but makes a bug visible)."""
+    days, start, end = _grid_shape(schedule)
     lines = [f"{title} (score {schedule.score:.2f})", ""]
-    header = "Time  | " + " | ".join(d.center(COL) for d in DAYS)
+    header = "Time  | " + " | ".join(d.center(COL) for d in days)
     lines += [header, "-" * len(header)]
-    for t in range(START, END, STEP):
+    for t in range(start, end, STEP):
         cells = []
-        for d in DAYS:
+        for d in days:
             codes = [code for code, sec in schedule.assignment.items()
                      for sl in sec.slots if sl.day == d and sl.start < t + STEP and t < sl.end]
             label = "" if not codes else (codes[0] if len(codes) == 1 else "CLASH")

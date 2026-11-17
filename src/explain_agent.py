@@ -5,7 +5,8 @@ import re
 
 from src.display import fmt
 
-ALL_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+ALL_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+WEEKDAYS = ALL_DAYS[:5]          # Saturday is only mentioned when a class is held on it
 LABELS = {"days_off": "preferred days off", "early": "avoiding early classes",
           "gaps": "short gaps between classes", "compact": "a compact schedule"}
 
@@ -24,7 +25,7 @@ def schedule_facts(schedule):
         "sections": {c: s.id for c, s in schedule.assignment.items()},
         "meetings": meetings,
         "days_used": [d for d in ALL_DAYS if d in days_used],
-        "days_off": [d for d in ALL_DAYS if d not in days_used],
+        "days_off": [d for d in WEEKDAYS if d not in days_used],
         "earliest": fmt(earliest),
         "latest": fmt(latest),
         "times": sorted(times),
@@ -50,7 +51,7 @@ def template_explanation(schedule):
 
 
 # ------------------------------------------------------------------ verification
-_DAY = re.compile(r"\b(Mon|Tue|Wed|Thu|Fri)\w*", re.I)
+_DAY = re.compile(r"\b(Mon|Tue|Wed|Thu|Fri|Sat)\w*", re.I)
 
 
 def verify_explanation(text, facts):
@@ -74,6 +75,8 @@ def verify_explanation(text, facts):
             return False
     # 5. days named in an "off / free / no classes" clause must really be off
     off = {d.lower() for d in facts["days_off"]}
+    if "Sat" not in facts["days_used"]:
+        off.add("sat")
     for clause in re.split(r"[;!?]|\.(?!\d)", text):
         if re.search(r"\b(off|free|no classes?)\b", clause, re.I):
             for m in _DAY.finditer(clause):
