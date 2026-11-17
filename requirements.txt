@@ -3,3 +3,5 @@ packaging==26.3
 pluggy==1.7.0
 Pygments==2.21.0
 pytest==9.1.1
+matplotlib>=3.8
+ipykernel>=6.29
