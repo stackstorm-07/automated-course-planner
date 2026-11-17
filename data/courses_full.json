@@ -1,0 +1,747 @@
+[
+ {
+  "code": "CSE518",
+  "name": "Artificial Intelligence",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "CSE518-1",
+    "instructor": "Shashi Prabh",
+    "seats": 40,
+    "synthetic": false,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "16:00",
+      "end": "17:30"
+     },
+     {
+      "day": "Thu",
+      "start": "16:00",
+      "end": "17:30"
+     }
+    ]
+   },
+   {
+    "id": "CSE518-2",
+    "instructor": "Instructor A",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "14:00",
+      "end": "15:30"
+     },
+     {
+      "day": "Wed",
+      "start": "14:00",
+      "end": "15:30"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "CSE340",
+  "name": "Operating Systems",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "CSE340-1",
+    "instructor": "Instructor B",
+    "seats": 35,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "10:00",
+      "end": "11:30"
+     },
+     {
+      "day": "Wed",
+      "start": "10:00",
+      "end": "11:30"
+     }
+    ]
+   },
+   {
+    "id": "CSE340-2",
+    "instructor": "Instructor C",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "10:00",
+      "end": "11:30"
+     },
+     {
+      "day": "Thu",
+      "start": "10:00",
+      "end": "11:30"
+     }
+    ]
+   },
+   {
+    "id": "CSE340-3",
+    "instructor": "Instructor B",
+    "seats": 0,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "13:00",
+      "end": "14:30"
+     },
+     {
+      "day": "Wed",
+      "start": "13:00",
+      "end": "14:30"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "CSE330",
+  "name": "Computer Networks",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "CSE330-1",
+    "instructor": "Instructor D",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "10:30",
+      "end": "12:00"
+     },
+     {
+      "day": "Wed",
+      "start": "10:30",
+      "end": "12:00"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "CSE250",
+  "name": "Database Management Systems",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "CSE250-1",
+    "instructor": "Instructor E",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "09:00",
+      "end": "10:30"
+     },
+     {
+      "day": "Thu",
+      "start": "09:00",
+      "end": "10:30"
+     }
+    ]
+   },
+   {
+    "id": "CSE250-2",
+    "instructor": "Instructor F",
+    "seats": 25,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "15:00",
+      "end": "16:30"
+     },
+     {
+      "day": "Wed",
+      "start": "15:00",
+      "end": "16:30"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "STA202",
+  "name": "Mathematical Statistics",
+  "credits": 4,
+  "sections": [
+   {
+    "id": "STA202-1",
+    "instructor": "Instructor G",
+    "seats": 40,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "12:00",
+      "end": "13:00"
+     },
+     {
+      "day": "Wed",
+      "start": "12:00",
+      "end": "13:00"
+     },
+     {
+      "day": "Fri",
+      "start": "12:00",
+      "end": "13:00"
+     }
+    ]
+   },
+   {
+    "id": "STA202-2",
+    "instructor": "Instructor H",
+    "seats": 35,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "13:00",
+      "end": "15:00"
+     },
+     {
+      "day": "Thu",
+      "start": "13:00",
+      "end": "15:00"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "CSE300",
+  "name": "Software Engineering",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "CSE300-1",
+    "instructor": "Instructor I",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "11:00",
+      "end": "12:30"
+     },
+     {
+      "day": "Thu",
+      "start": "11:00",
+      "end": "12:30"
+     }
+    ]
+   },
+   {
+    "id": "CSE300-2",
+    "instructor": "Instructor J",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "16:30",
+      "end": "18:00"
+     },
+     {
+      "day": "Wed",
+      "start": "16:30",
+      "end": "18:00"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "CSC210",
+  "name": "Data Structures and Algorithms",
+  "credits": 4,
+  "sections": [
+   {
+    "id": "CSC210-1",
+    "instructor": "Instructor L",
+    "seats": 40,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "09:00",
+      "end": "10:00"
+     },
+     {
+      "day": "Wed",
+      "start": "09:00",
+      "end": "10:00"
+     },
+     {
+      "day": "Fri",
+      "start": "09:00",
+      "end": "10:00"
+     }
+    ]
+   },
+   {
+    "id": "CSC210-2",
+    "instructor": "Instructor M",
+    "seats": 35,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "11:30",
+      "end": "13:30"
+     },
+     {
+      "day": "Thu",
+      "start": "11:30",
+      "end": "13:30"
+     }
+    ]
+   },
+   {
+    "id": "CSC210-3",
+    "instructor": "Instructor L",
+    "seats": 25,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "14:00",
+      "end": "15:00"
+     },
+     {
+      "day": "Wed",
+      "start": "14:00",
+      "end": "15:00"
+     },
+     {
+      "day": "Fri",
+      "start": "14:00",
+      "end": "15:00"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "CSE212",
+  "name": "Cyber Security",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "CSE212-1",
+    "instructor": "Instructor N",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "14:30",
+      "end": "16:00"
+     },
+     {
+      "day": "Thu",
+      "start": "14:30",
+      "end": "16:00"
+     }
+    ]
+   },
+   {
+    "id": "CSE212-2",
+    "instructor": "Instructor O",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "12:30",
+      "end": "14:00"
+     },
+     {
+      "day": "Wed",
+      "start": "12:30",
+      "end": "14:00"
+     }
+    ]
+   },
+   {
+    "id": "CSE212-3",
+    "instructor": "Instructor N",
+    "seats": 20,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Sat",
+      "start": "10:00",
+      "end": "12:30"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "STA102",
+  "name": "Probability and Random Variables",
+  "credits": 4,
+  "sections": [
+   {
+    "id": "STA102-1",
+    "instructor": "Instructor P",
+    "seats": 40,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "12:00",
+      "end": "14:00"
+     },
+     {
+      "day": "Thu",
+      "start": "12:00",
+      "end": "14:00"
+     }
+    ]
+   },
+   {
+    "id": "STA102-2",
+    "instructor": "Instructor Q",
+    "seats": 35,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "13:00",
+      "end": "14:00"
+     },
+     {
+      "day": "Wed",
+      "start": "13:00",
+      "end": "14:00"
+     },
+     {
+      "day": "Fri",
+      "start": "13:00",
+      "end": "14:00"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "MAT248",
+  "name": "Applied Linear Algebra",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "MAT248-1",
+    "instructor": "Instructor R",
+    "seats": 40,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "09:00",
+      "end": "10:30"
+     },
+     {
+      "day": "Wed",
+      "start": "09:00",
+      "end": "10:30"
+     }
+    ]
+   },
+   {
+    "id": "MAT248-2",
+    "instructor": "Instructor S",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Sat",
+      "start": "11:00",
+      "end": "12:30"
+     }
+    ]
+   },
+   {
+    "id": "MAT248-3",
+    "instructor": "Instructor R",
+    "seats": 0,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "16:30",
+      "end": "18:00"
+     },
+     {
+      "day": "Wed",
+      "start": "16:30",
+      "end": "18:00"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "MAT305",
+  "name": "Mathematical Modeling",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "MAT305-1",
+    "instructor": "Instructor T",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "12:00",
+      "end": "13:30"
+     },
+     {
+      "day": "Thu",
+      "start": "12:00",
+      "end": "13:30"
+     }
+    ]
+   },
+   {
+    "id": "MAT305-2",
+    "instructor": "Instructor U",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "13:00",
+      "end": "14:30"
+     },
+     {
+      "day": "Wed",
+      "start": "13:00",
+      "end": "14:30"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "MAT281",
+  "name": "Multivariable Calculus",
+  "credits": 4,
+  "sections": [
+   {
+    "id": "MAT281-1",
+    "instructor": "Instructor V",
+    "seats": 40,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "11:00",
+      "end": "12:00"
+     },
+     {
+      "day": "Wed",
+      "start": "11:00",
+      "end": "12:00"
+     },
+     {
+      "day": "Fri",
+      "start": "11:00",
+      "end": "12:00"
+     }
+    ]
+   },
+   {
+    "id": "MAT281-2",
+    "instructor": "Instructor W",
+    "seats": 35,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "14:00",
+      "end": "16:00"
+     },
+     {
+      "day": "Thu",
+      "start": "14:00",
+      "end": "16:00"
+     }
+    ]
+   },
+   {
+    "id": "MAT281-3",
+    "instructor": "Instructor V",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "13:00",
+      "end": "14:00"
+     },
+     {
+      "day": "Wed",
+      "start": "13:00",
+      "end": "14:00"
+     },
+     {
+      "day": "Fri",
+      "start": "13:00",
+      "end": "14:00"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "CSD102",
+  "name": "Data Science",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "CSD102-1",
+    "instructor": "Instructor X",
+    "seats": 40,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "13:30",
+      "end": "15:00"
+     },
+     {
+      "day": "Wed",
+      "start": "13:30",
+      "end": "15:00"
+     }
+    ]
+   },
+   {
+    "id": "CSD102-2",
+    "instructor": "Instructor Y",
+    "seats": 35,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "10:00",
+      "end": "11:30"
+     },
+     {
+      "day": "Thu",
+      "start": "10:00",
+      "end": "11:30"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "MGT111",
+  "name": "Identity and Behaviour",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "MGT111-1",
+    "instructor": "Instructor Z",
+    "seats": 40,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Sat",
+      "start": "10:00",
+      "end": "12:30"
+     }
+    ]
+   },
+   {
+    "id": "MGT111-2",
+    "instructor": "Instructor Z",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "16:00",
+      "end": "17:30"
+     },
+     {
+      "day": "Wed",
+      "start": "16:00",
+      "end": "17:30"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "code": "FAC114",
+  "name": "Financial Accounting",
+  "credits": 3,
+  "sections": [
+   {
+    "id": "FAC114-1",
+    "instructor": "Instructor AA",
+    "seats": 40,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Tue",
+      "start": "15:00",
+      "end": "16:30"
+     },
+     {
+      "day": "Thu",
+      "start": "15:00",
+      "end": "16:30"
+     }
+    ]
+   },
+   {
+    "id": "FAC114-2",
+    "instructor": "Instructor AB",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Sat",
+      "start": "13:00",
+      "end": "15:30"
+     }
+    ]
+   },
+   {
+    "id": "FAC114-3",
+    "instructor": "Instructor AA",
+    "seats": 30,
+    "synthetic": true,
+    "slots": [
+     {
+      "day": "Mon",
+      "start": "09:30",
+      "end": "11:00"
+     },
+     {
+      "day": "Wed",
+      "start": "09:30",
+      "end": "11:00"
+     }
+    ]
+   }
+  ]
+ }
+]
