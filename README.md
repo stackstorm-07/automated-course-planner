@@ -21,7 +21,7 @@ A student picks the courses they want. Each course has several sections (differe
 4. shows the **top three** as a weekly calendar grid with a plain-language explanation,
 5. lets the student **accept or reject** each option.
 
-If no clash-free timetable exists, it says so and (with `--trace`) shows why.
+If no clash-free timetable exists, it says so.
 
 ### Two-agent design
 
@@ -104,23 +104,11 @@ Always run commands from the repository root.
 ## Usage
 
 ```bash
-python -m src.main                                   # default: starter catalog, 6 courses
-python -m src.main --trace                           # also print the step-by-step search trace
-python -m src.main --confirm                         # ask y / n / q for each option
-python -m src.main --top 5                           # show 5 options instead of 3
-python -m src.main --courses CSE518 CSE340 STA202    # choose courses on the command line
-python -m src.main --catalog data/courses_full.json --courses CSE518 CSC210 MAT248
-python -m src.main --prefs my_preferences.json       # use another preferences file
+python -m src.main             # show the top three timetables, each with an explanation
+python -m src.main --confirm   # ask y / n / q for each option
 ```
 
-| Option | Default | Meaning |
-|---|---|---|
-| `--catalog` | `data/courses.json` | Course and section file |
-| `--prefs` | `data/preferences.json` | Preferences file |
-| `--courses` | from preferences | Course codes (overrides the preferences file) |
-| `--top` | 3 | Number of timetables to show |
-| `--trace` / `--trace-limit` | off / 40 | Print the search steps, and how many |
-| `--confirm` | off | Interactive accept / reject prompt |
+The program reads `data/courses.json` and `data/preferences.json`. To plan with different courses or preferences, edit `selected` and the weights in `data/preferences.json`, or replace the catalog with another file in the format described under Data.
 
 ### Preferences file
 
@@ -135,7 +123,6 @@ python -m src.main --prefs my_preferences.json       # use another preferences f
 ### Example output (default run, abbreviated)
 
 ```
-Courses: CSE518, CSE340, CSE330, CSE250, STA202, CSE300
 Valid timetables found: 2   solver stats: {'nodes': 7, 'backtracks': 0, 'ac3_removed': 4}
 
 Option 1 of 2 (score 0.78)
@@ -154,16 +141,6 @@ days off: Fri. ... Overall preference score: 0.78 out of 1.
 ```
 
 A Saturday column appears in the grid only when a chosen section meets on Saturday.
-
-`--trace` output for the same run starts like this:
-
-```
-  1. AC-3 removed CSE340-1 from CSE340: no compatible section in CSE330
-  2. AC-3 removed CSE250-1 from CSE250: no compatible section in CSE340
-  ...
-  5. choose CSE340 (1 sections left)
-  6. assign CSE340 = CSE340-2
-```
 
 ---
 
@@ -206,17 +183,17 @@ automated-course-planner/
     loader.py        read and validate the JSON
     csp.py           overlap check, CSP model, consistency and validity checks
     propagation.py   AC-3
-    search.py        brute force, backtracking, FC, MRV, LCV, search trace
+    search.py        brute force, backtracking, FC, MRV, LCV
     scoring.py       soft-preference terms
     ranking.py       score, re-validate, sort, top N
-    display.py       calendar grid, trace printer, confirmation prompt
+    display.py       calendar grid, confirmation prompt, no-solution message
     explain_agent.py facts, template explanation, verification, optional LLM hook
-    main.py          command-line program
+    main.py          program entry point (python -m src.main)
   tests/         pytest suite
   benchmarks/    compare_heuristics.py
   scripts/       build_full_catalog.py  build_stress_catalog.py
   results/       evaluation.json (benchmark output)
-  README.md  demo.md  docs/  requirements.txt
+  README.md  requirements.txt
 ```
 
 ---
@@ -236,8 +213,7 @@ The tests cover:
 - AC-3 pruning and early detection of impossible requests,
 - scoring and ranking (hand-checked values, determinism, fewer than three results),
 - Saturday classes in the solver, scoring, calendar and explanation,
-- the calendar grid, the confirmation prompt and the explanation verifier,
-- the command-line program, including `--trace` and the impossible case.
+- the calendar grid, the confirmation prompt and the explanation verifier.
 
 ## Evaluation
 
@@ -264,8 +240,8 @@ Stress catalog, nodes / backtracks (identical on every machine; times depend on 
 Findings, including where the heuristics do not help:
 
 - **FC + MRV scales best.** At 10 courses it needs about 6.7 times fewer nodes than plain backtracking and never backtracks.
-- **On small problems the heuristics do not pay off in time.** Each node costs more (domain copies, MRV selection), so plain backtracking is as fast or faster at 4 to 6 courses.
-- **LCV does not reduce work when all solutions are collected,** because every branch must be visited anyway. It mainly helps when stopping at the first solution.
+- **On the smallest problem the heuristics do not pay off in time.** Each node costs more (domain copies, MRV selection): at 4 courses plain backtracking took 2.5 ms against 3.1 ms for FC + MRV in the saved run. From 6 courses on the savings in nodes show up in time too (21.7 ms against 8.1 ms). Times are from `results/evaluation.json` and depend on the machine.
+- **LCV does not reduce work here,** because the solver collects all solutions and every branch must be visited anyway: the node counts with and without LCV are identical in the table, and it only adds ordering cost.
 - **AC-3 has no effect on the stress catalog,** because every section has a compatible partner in every other course. It helps on tight catalogs and on impossible requests: for `CSE518` + `FAC114` (a course that clashes with every `CSE518` section), plain search needs 12 nodes and AC-3 needs 0.
 
 ---
